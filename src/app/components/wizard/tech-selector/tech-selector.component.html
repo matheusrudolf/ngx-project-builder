@@ -1,0 +1,40 @@
+<div class="grid">
+
+  @for (item of technologies; track $index) {
+
+  <div class="col">
+    <div class="border-3 surface-border border-round p-1 tech-card shadow-3" [ngClass]="onSelected(item.selected)"
+      (click)="selectedThecnologie(item)">
+
+      <p-dropdown [style]="{'width': '100%'}" placeholder="Select the version..." [options]="item.versions"
+        [(ngModel)]="selectedVersion" />
+
+      <div class="flex justify-content-center mt-3">
+        <i [class]="item.icon"></i>
+      </div>
+
+      <p class="text-center">{{item.title}}</p>
+    </div>
+  </div>
+
+  }
+
+</div>
+
+<div class="flex pt-4 justify-content-between">
+  <p-button label="Verify Node" pTooltip="Click to verify the node installation" (onClick)="verifyNodeInstallation()" />
+  <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="handleNextButton()"
+    [disabled]="!steps.choosenTech" />
+
+</div>
+
+<p-confirmDialog #cd key="nodeVersion">
+  <ng-template pTemplate="footer" let-footer>
+    <div class="flex justify-content-center">
+      <button pButton label="Ok" (click)="cd.accept()">
+      </button>
+    </div>
+  </ng-template>
+</p-confirmDialog>
+
+<p-confirmDialog key="angularVersion" />

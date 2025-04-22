@@ -1,0 +1,51 @@
+<div class="grid">
+  <div class="col-8">
+    <p-fieldset legend="Choose the Stylesheet" styleClass="shadow-3">
+
+      <div class="flex flex-wrap gap-3">
+        @for (item of styles; track $index) {
+        <div class="flex align-items-center">
+          <p-radioButton name="stylesheet" [value]="item.value" [(ngModel)]="steps.stylesheet"
+            [inputId]="item.value" />
+          <label [for]="item.value" class="ml-2">
+            <i [class]="item.icon"></i>
+            {{item.description}}
+          </label>
+        </div>
+        }
+      </div>
+
+    </p-fieldset>
+  </div>
+
+  <div class="col-4">
+    <p-fieldset legend="Server Side Rendering Enabling" styleClass="shadow-3">
+
+      <p-inputSwitch [(ngModel)]="steps.ssrEnabled" styleClass="mr-2" />
+      Enable SSR and (SSG/Prerendering)?
+
+    </p-fieldset>
+  </div>
+</div>
+
+<p-inputGroup>
+  <input type="text" pInputText [(ngModel)]="steps.projectName" placeholder="Enter a project name..."
+    style="width: 100%;" />
+  <button type="button" pButton icon="pi pi-check" (click)="createProject(steps.techType)"></button>
+</p-inputGroup>
+
+<p-progressBar [mode]="'determinate'" [value]="progressBarVal" [showValue]="true" styleClass="mt-2" />
+
+<div class="block">
+  <textarea #textarea rows="10" cols="100" pInputTextarea [(ngModel)]="currentOutput" readonly
+    style="width: 100%; resize: none;">
+  </textarea>
+  <p-contextMenu [target]="textarea" [model]="contextMenu" />
+</div>
+
+
+<div class="flex pt-4 justify-content-between">
+  <p-button label="Back" icon="pi pi-spin pi-arrow-left" (onClick)="handlePrevButton()" />
+  <p-button label="Next" icon="pi pi-arrow-right" iconPos="right" (onClick)="handleNextButton()"
+    [disabled]="!steps.createdProj" />
+</div>

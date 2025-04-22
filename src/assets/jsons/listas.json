@@ -1,0 +1,79 @@
+{
+  "Technologies": [
+    {
+      "type": "create-angular-project",
+      "selected": false,
+      "icon": "fa-brands fa-angular text-7xl text-red-500",
+      "title": "Angular",
+      "versions": [
+        {
+          "label": "latest",
+          "value": "@latest"
+        },
+        {
+          "label": "16.2.14",
+          "value": "@16.2.14"
+        },
+        {
+          "label": "14.2.13",
+          "value": "@14.2.13"
+        },
+        {
+          "label": "13.3.3",
+          "value": "@13.3.3"
+        },
+        {
+          "label": "12.2.18",
+          "value": "@12.2.18"
+        },
+        {
+          "label": "11.2.19",
+          "value": "@11.2.19"
+        }
+      ]
+    },
+    {
+      "type": "create-react-project",
+      "selected": false,
+      "icon": "fa-brands fa-react text-7xl text-blue-500",
+      "title": "React",
+      "versions": []
+    },
+    {
+      "type": "create-rnative-project",
+      "selected": false,
+      "icon": "fa-brands fa-react text-7xl text-blue-500",
+      "title": "React Native",
+      "versions": []
+    },
+    {
+      "type": "create-vue-project",
+      "selected": false,
+      "icon": "fa-brands fa-vuejs text-7xl text-teal-500",
+      "title": "Vue",
+      "versions": []
+    }
+  ],
+  "Stylesheets": [
+    {
+      "value": "css",
+      "description": "CSS",
+      "icon": "fa-brands fa-css3-alt text-blue-500"
+    },
+    {
+      "value": "scss",
+      "description": "SCSS",
+      "icon": "fa-brands fa-sass text-pink-400"
+    },
+    {
+      "value": "sass",
+      "description": "SASS",
+      "icon": "fa-brands fa-sass text-pink-400"
+    },
+    {
+      "value": "less",
+      "description": "LESS",
+      "icon": "fa-brands fa-less text-blue-800"
+    }
+  ]
+}

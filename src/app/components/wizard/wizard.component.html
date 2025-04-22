@@ -1,0 +1,29 @@
+<p-stepper [linear]="true">
+  <p-stepperPanel header="Choose a Technologie">
+    <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+
+      <pb-tech-selector [technologies]="projTechnologie" [steps]="projSteps" (nextButton)="nextCallback.emit()" (verifyTechVersion)="handleTechVerification($event)" />
+
+    </ng-template>
+  </p-stepperPanel>
+
+  <p-stepperPanel header="Create the project">
+    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+
+      <pb-project-creator [styles]="stylesheets" [steps]="projSteps" (nextButton)="nextCallback.emit()" (prevButton)="prevCallback.emit()" />
+
+    </ng-template>
+  </p-stepperPanel>
+
+  <p-stepperPanel header="Settings">
+    <ng-template pTemplate="content" let-prevCallback="prevCallback" let-nextCallback="nextCallback" let-index="index">
+
+      <p>...</p>
+
+      <div class="flex pt-4 justify-content-between">
+        <p-button label="Back" icon="pi pi-spin pi-arrow-left" (onClick)="prevCallback.emit()" />
+      </div>
+
+    </ng-template>
+  </p-stepperPanel>
+</p-stepper>
